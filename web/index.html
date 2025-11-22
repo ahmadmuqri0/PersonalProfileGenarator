@@ -7,7 +7,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personal Profile Form</title>
+    <title>Personal Profile Generator</title>
     <style>
         body {
             font-family: "Segoe UI", Arial, sans-serif;
@@ -82,28 +82,26 @@ and open the template in the editor.
 
     <form action="profile" method="POST">
 
-       <div class="input-container">
-            <label>Name:</label>
-            <input type="text" name="name" required>
-        </div>
-        
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="John Doe" required>
+
         <label>Student ID:</label>
-        <input type="text" name="studentId" required>
+        <input type="text" name="studentId" placeholder="2025XXXXXX" required>
 
         <label>Program:</label>
-        <input type="text" name="program" required>
+        <input type="text" name="program" placeholder="CDCS253" required>
 
         <label>Email:</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" placeholder="johndoe@gmail.com" required>
 
         <label>Hobbies:</label>
-        <input type="text" name="hobbies">
+        <input type="text" name="hobbies" placeholder="e.g. Reading, Fishing">
 
         <label>Strengths:</label>
-        <input type="text" name="strengths" placeholder="e.g. Teamwork, communication, coding...">
+        <input type="text" name="strengths" placeholder="e.g. Teamwork, Communication, Coding...">
 
         <label>Ambition / Career Goal:</label>
-        <input type="text" name="ambition" placeholder="e.g. Software engineer, data analyst...">
+        <input type="text" name="ambition" placeholder="e.g. Software Engineer, Data Analyst...">
 
         <label>Favorite Quote:</label>
         <input type="text" name="quote" placeholder="Optional">

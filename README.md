@@ -12,7 +12,7 @@ Firstly the project does nothing fancy, it takes the input from user in a form a
 
 ## Notes
 
-That's it! I hope someone found this and then give it a pass because this is honestly just an assignment project and not to be taken seriously.
+That's it! If someone found this just give it a pass, because this is honestly just an assignment project and not to be taken seriously.
 
 ## Showcase
 

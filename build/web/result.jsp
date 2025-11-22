@@ -64,7 +64,6 @@
             padding-bottom: 15px;
         }
         
-        /* Grid for key details */
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -93,7 +92,6 @@
             font-size: 1rem;
         }
 
-        /* Full-width sections (Quote, About Me) */
         .full-width-section {
             margin-top: 20px;
             padding: 20px;

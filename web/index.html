@@ -5,111 +5,192 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Personal Profile Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #9ec3fc;
+            --card-background: #ffffff;
+            --input-border: #dee2e6;
+            --input-focus: #007bff;
+            --text-color: #343a40;
+            --border-radius: 10px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition-speed: 0.3s;
+        }
+
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #4da3ff;
-            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-color);
+            min-height: 100vh; 
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 10px; 
+            box-sizing: border-box;
         }
 
-        .container {
-            background: white;
-            width: 50rem;
-            padding: 2rem 2.9rem 2rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            animation: fadeSlide 0.8s ease-out;
+        .form-card {
+            background: var(--card-background);
+            width: 100%;
+            max-width: 650px;
+            padding: 25px; 
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            animation: fadeInScale 0.8s ease-out;
+            max-height: 98vh; 
+            overflow-y: auto;
         }
 
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(30px); }
-            to   { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to   { opacity: 1; transform: scale(1); }
         }
 
-        h2 {
+        .form-card h2 {
             text-align: center;
-            color: #0056d6;
-            margin-bottom: 25px;
+            color: var(--primary-color);
+            margin-bottom: 20px; 
+            font-weight: 700;
+            font-size: 1.6rem;
+        }
+        
+        .form-group {
+            margin-bottom: 12px; 
         }
 
         label {
+            display: block;
             font-weight: 600;
-            color: #003e8c;
+            color: var(--text-color);
+            margin-bottom: 4px; 
+            font-size: 0.9rem;
         }
 
         input, textarea, select {
             width: 100%;
-            margin: .5rem 0 1.125rem 0;
-            padding: 0.625rem;
-            border: 1px solid #cfd9ea;
-            border-radius: 6px;
-            transition: 0.3s;
+            padding: 9px; 
+            border: 1px solid var(--input-border);
+            border-radius: 5px; 
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+            box-sizing: border-box;
+            font-size: 0.95rem;
         }
-
+        
         input:focus, textarea:focus, select:focus {
-            border-color: #0056d6;
-            box-shadow: 0 0 6px rgba(0, 86, 214, 0.3);
+            outline: none;
+            border-color: var(--input-focus);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 60px; 
         }
 
-        button {
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px; 
+        }
+        
+        @media (max-width: 550px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        hr {
+            margin: 15px 0; 
+            border: 0; 
+            border-top: 1px solid #e9ecef;
+        }
+
+        button[type="submit"] {
             width: 100%;
-            background: #0056d6;
+            background: var(--primary-color);
             color: white;
-            padding: 12px;
+            padding: 10px; 
             border: none;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            transition: background var(--transition-speed), transform var(--transition-speed);
+            margin-top: 18px; 
         }
 
-        button:hover {
-            background: #003f9c;
+        button[type="submit"]:hover {
+            background: #0056b3;
+            transform: translateY(-1px);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Personal Profile</h2>
+<div class="form-card">
+    <h2>Enter Your Profile Details</h2>
 
     <form action="profile" method="POST">
+        
+        <div class="grid-layout">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" placeholder="2025XXXXXX" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="program">Program:</label>
+                <input type="text" id="program" name="program" placeholder="CDCS253" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="form-group">
+            <label for="hobbies">Hobbies:</label>
+            <input type="text" id="hobbies" name="hobbies" placeholder="e.g. Reading, Fishing, Hiking">
+        </div>
 
-        <label>Name:</label>
-        <input type="text" name="name" placeholder="John Doe" required>
+        <div class="form-group">
+            <label for="strengths">Strengths:</label>
+            <input type="text" id="strengths" name="strengths" placeholder="e.g. Teamwork, Communication, Problem-Solving">
+        </div>
 
-        <label>Student ID:</label>
-        <input type="text" name="studentId" placeholder="2025XXXXXX" required>
+        <div class="form-group">
+            <label for="ambition">Ambition / Career Goal:</label>
+            <input type="text" id="ambition" name="ambition" placeholder="e.g. Senior Software Engineer, Data Analyst">
+        </div>
 
-        <label>Program:</label>
-        <input type="text" name="program" placeholder="CDCS253" required>
+        <div class="form-group">
+            <label for="quote">Favorite Quote:</label>
+            <input type="text" id="quote" name="quote" placeholder="Optional quote">
+        </div>
 
-        <label>Email:</label>
-        <input type="email" name="email" placeholder="johndoe@gmail.com" required>
+        <div class="form-group">
+            <label for="intro">Self Introduction:</label>
+            <textarea id="intro" name="intro" rows="3" placeholder="Briefly tell us something interesting about yourself..."></textarea>
+        </div>
 
-        <label>Hobbies:</label>
-        <input type="text" name="hobbies" placeholder="e.g. Reading, Fishing">
-
-        <label>Strengths:</label>
-        <input type="text" name="strengths" placeholder="e.g. Teamwork, Communication, Coding...">
-
-        <label>Ambition / Career Goal:</label>
-        <input type="text" name="ambition" placeholder="e.g. Software Engineer, Data Analyst...">
-
-        <label>Favorite Quote:</label>
-        <input type="text" name="quote" placeholder="Optional">
-
-        <label>Self Introduction:</label>
-        <textarea name="intro" rows="4" placeholder="Tell something about yourself..."></textarea>
-
-        <button type="submit">Submit</button>
+        <button type="submit">Create My Profile</button>
     </form>
 </div>
 

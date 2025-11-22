@@ -9,8 +9,6 @@
 <html>
 <head>
     <title>Your Profile</title>
-<head>
-    <title>Your Profile</title>
     <style>
         body {
             font-family: "Segoe UI", Arial, sans-serif;

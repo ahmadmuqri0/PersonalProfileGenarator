@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Profile Form</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #4da3ff;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            width: 50rem;
+            padding: 2rem 2.9rem 2rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            animation: fadeSlide 0.8s ease-out;
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056d6;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #003e8c;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            margin: .5rem 0 1.125rem 0;
+            padding: 0.625rem;
+            border: 1px solid #cfd9ea;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #0056d6;
+            box-shadow: 0 0 6px rgba(0, 86, 214, 0.3);
+        }
+
+        button {
+            width: 100%;
+            background: #0056d6;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #003f9c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Personal Profile</h2>
+
+    <form action="profile" method="POST">
+
+       <div class="input-container">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+        </div>
+        
+        <label>Student ID:</label>
+        <input type="text" name="studentId" required>
+
+        <label>Program:</label>
+        <input type="text" name="program" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Hobbies:</label>
+        <input type="text" name="hobbies">
+
+        <label>Strengths:</label>
+        <input type="text" name="strengths" placeholder="e.g. Teamwork, communication, coding...">
+
+        <label>Ambition / Career Goal:</label>
+        <input type="text" name="ambition" placeholder="e.g. Software engineer, data analyst...">
+
+        <label>Favorite Quote:</label>
+        <input type="text" name="quote" placeholder="Optional">
+
+        <label>Self Introduction:</label>
+        <textarea name="intro" rows="4" placeholder="Tell something about yourself..."></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
